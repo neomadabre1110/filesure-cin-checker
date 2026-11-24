@@ -1,0 +1,365 @@
+
+/* =========================================
+   FILESURE - CIN AND LLPIN CHECKER
+   Clean and minimal corporate design
+========================================= */
+
+
+/* 1. BASIC RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7fa;
+    color: #26374a;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 34px 5%;
+}
+
+
+/* 2. MAIN PAGE LAYOUT */
+
+body > * {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #203247;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #203247;
+    margin-bottom: 16px;
+}
+
+body > p {
+    color: #68798d;
+    font-size: 16px;
+    margin-bottom: 25px;
+    max-width: 700px;
+}
+
+
+/* 3. INPUT AREA */
+
+form,
+.input-section,
+#inputSection {
+    background-color: #ffffff;
+    border: 1px solid #dce3ec;
+    border-radius: 9px;
+    padding: 28px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #293b50;
+    margin-bottom: 12px;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    min-height: 190px;
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #26374a;
+    background-color: #ffffff;
+    border: 1px solid #cbd6e2;
+    border-radius: 6px;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+textarea:focus {
+    border-color: #286090;
+    box-shadow: 0 0 0 3px rgba(40, 96, 144, 0.10);
+}
+
+textarea::placeholder {
+    color: #9aa7b5;
+}
+
+
+/* 4. BUTTONS */
+
+button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 18px;
+    margin-right: 10px;
+}
+
+#checkButton {
+    background-color: #285b8e;
+    color: #ffffff;
+    border: 1px solid #285b8e;
+}
+
+#checkButton:hover {
+    background-color: #204a75;
+}
+
+#clearButton {
+    background-color: #ffffff;
+    color: #45566b;
+    border: 1px solid #cbd6e2;
+}
+
+#clearButton:hover {
+    background-color: #f0f3f7;
+}
+
+
+/* 5. RESULTS SECTION */
+
+#resultsContainer {
+    background-color: #ffffff;
+    border: 1px solid #dce3ec;
+    border-radius: 9px;
+    padding: 28px;
+    margin-top: 30px;
+    overflow-wrap: anywhere;
+}
+
+#resultsContainer:empty {
+    min-height: 100px;
+}
+
+#resultsContainer > h2 {
+    margin-bottom: 18px;
+}
+
+
+/* 6. SUMMARY DASHBOARD */
+
+#resultsContainer .summary-grid {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 14px;
+    width: 100%;
+    margin-bottom: 25px;
+    align-items: stretch;
+}
+
+#resultsContainer .summary-card {
+    display: block !important;
+    width: auto !important;
+    min-width: 0;
+    padding: 18px 14px;
+    background-color: #f9fafc;
+    border: 1px solid #e1e7ee;
+    border-radius: 7px;
+}
+
+#resultsContainer .summary-card h3 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #263b52;
+    margin: 0 0 5px;
+}
+
+#resultsContainer .summary-card p {
+    font-size: 13px;
+    color: #68798d;
+    margin: 0;
+    line-height: 1.4;
+}
+
+#resultsContainer .summary-card.total {
+    border-top: 3px solid #64748b;
+}
+
+#resultsContainer .summary-card.valid {
+    border-top: 3px solid #32966b;
+}
+
+#resultsContainer .summary-card.invalid {
+    border-top: 3px solid #c65b56;
+}
+
+#resultsContainer .summary-card.company {
+    border-top: 3px solid #4779aa;
+}
+
+#resultsContainer .summary-card.llp {
+    border-top: 3px solid #8b78a9;
+}
+
+
+/* 7. INDIVIDUAL RESULT CARDS */
+
+#resultsContainer .result-card {
+    display: block;
+    background-color: #ffffff;
+    border: 1px solid #e1e7ee;
+    border-radius: 7px;
+    padding: 20px;
+    margin-top: 14px;
+    width: 100%;
+}
+
+#resultsContainer .result-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #293e55;
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+}
+
+#resultsContainer .result-card p {
+    font-size: 14px;
+    color: #586a7e;
+    margin-top: 5px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+#resultsContainer .result-card .valid-status {
+    color: #21834b;
+    font-weight: 700;
+}
+
+#resultsContainer .result-card .invalid-status {
+    color: #c0392b;
+    font-weight: 700;
+}
+
+
+/* 8. FOOTER */
+
+footer {
+    text-align: center;
+    color: #8997a8;
+    font-size: 14px;
+    padding: 25px 10px;
+    margin-top: 55px;
+    border-top: 1px solid #e1e7ee;
+}
+
+
+/* 9. TABLET RESPONSIVENESS */
+
+@media (max-width: 850px) {
+
+    body {
+        padding: 28px 4%;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    #resultsContainer .summary-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+
+}
+
+
+/* 10. MOBILE RESPONSIVENESS */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 22px 16px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    body > p {
+        font-size: 14px;
+    }
+
+    form,
+    .input-section,
+    #inputSection {
+        padding: 18px;
+    }
+
+    #resultsContainer {
+        padding: 18px;
+    }
+
+    #resultsContainer .summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px;
+    }
+
+    #resultsContainer .summary-card {
+        padding: 14px 11px;
+    }
+
+    #resultsContainer .summary-card h3 {
+        font-size: 23px;
+    }
+
+    #resultsContainer .result-card {
+        padding: 15px;
+    }
+
+    button {
+        padding: 11px 18px;
+        font-size: 14px;
+    }
+
+}
+
+
+/* 11. SMALL MOBILE SCREENS */
+
+@media (max-width: 360px) {
+
+    body {
+        padding: 18px 12px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    #resultsContainer .summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    #resultsContainer .summary-card h3 {
+        font-size: 20px;
+    }
+
+}

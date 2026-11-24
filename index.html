@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FileSure | CIN Checker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>FileSure</h1>
+        <p>Company & LLP Identification Checker</p>
+    </header>
+
+    <main>
+
+        <section class="welcome">
+            <h2>Verify Company Identification Numbers</h2>
+
+            <p>
+                Check CIN and LLPIN formats quickly and easily.
+                Enter one or multiple identification numbers below.
+            </p>
+        </section>
+
+        <section class="checker">
+
+            <label for="cinInput">
+                Enter CIN or LLPIN numbers
+            </label>
+
+            <textarea
+                id="cinInput"
+                placeholder="Example:
+L17110MH1973PLC019786
+AAA-1234"
+                rows="8">
+            </textarea>
+
+            <button id="checkButton">
+                Check Numbers
+            </button>
+
+            <button id="clearButton" type="button">
+                Clear
+            </button>
+
+        </section>
+
+        <section class="results">
+            <h2>Results</h2>
+
+            <div id="resultsContainer">
+                <p>Your results will appear here.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>FileSure CIN Checker | Built with care</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
